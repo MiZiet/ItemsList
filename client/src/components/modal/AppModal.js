@@ -10,7 +10,7 @@ import {
   Form,
   FormGroup,
 } from "reactstrap";
-const AppModal = ({ toggleModal, modal, submit, list }) => {
+const AppModal = ({ toggleModal, modal, submit }) => {
   const [formData, setFormData] = useState({
     name: "",
     language: "",
@@ -32,6 +32,7 @@ const AppModal = ({ toggleModal, modal, submit, list }) => {
       description: "",
       initRelease: "",
     });
+    toggleModal();
   };
 
   return (

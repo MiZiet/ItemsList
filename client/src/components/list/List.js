@@ -1,10 +1,10 @@
 import React, { useEffect, useState } from "react";
-import { Table, Button, Nav } from "reactstrap";
+import { Table, Button } from "reactstrap";
 import ListItem from "./ListItem";
 import AppModal from "../modal/AppModal";
 
 const List = () => {
-  const [state, setState] = useState({ modalIsOpen: false, listItems: [] });
+  const [state, setState] = useState({ listItems: [] });
   const [modal, setModal] = useState(false);
   const toggleModal = () => {
     setModal(!modal);
@@ -71,12 +71,7 @@ const List = () => {
           Add New List Item
         </Button>
       </main>
-      <AppModal
-        list={state.listItems}
-        modal={modal}
-        toggleModal={toggleModal}
-        submit={addItemToAPI}
-      />
+      <AppModal modal={modal} toggleModal={toggleModal} submit={addItemToAPI} />
     </>
   );
 };
